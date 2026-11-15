@@ -1,0 +1,27 @@
+# Python
+backend/.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Local SQLite Databases & Banking Workspaces (NEVER commit client RFP data)
+*.db
+*.db-wal
+*.db-shm
+rfp_workspaces/
+uploads/
+
+# Secrets & Environment
+.env
+.env.local
+
+# Node / TypeScript / Desktop & Mobile Builds
+frontend/node_modules/
+frontend/dist/
+frontend/release/
+frontend/android/
+frontend/ios/
+
+# macOS
+.DS_Store
+logs/
