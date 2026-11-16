@@ -27,11 +27,11 @@ def test_docx_layout_aware_table_extraction(tmp_path: Path):
 
 
 def test_banking_pii_redaction_and_restoration():
-    raw = "Wire settlement to IBAN DE89370400440532013000 via SWIFT DEUTDEFF and notify ops@bank.com."
+    raw = "Wire settlement to IBAN DE00000000000000000000 via SWIFT DEUTDEFF and notify tester@example.test."
     redacted, vault = redact_banking_pii(raw)
-    assert "DE89370400440532013000" not in redacted
+    assert "DE00000000000000000000" not in redacted
     assert "DEUTDEFF" not in redacted
-    assert "ops@bank.com" not in redacted
+    assert "tester@example.test" not in redacted
     assert restore_banking_pii(redacted, vault) == raw
 
 

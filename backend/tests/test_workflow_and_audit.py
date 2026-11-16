@@ -7,8 +7,8 @@ from backend.app.db.database import append_audit_log, get_connection
 
 def test_immutable_audit_log_blocks_tampering():
     """Governance Rule 3: Verifies SHA-256 hash chaining and UPDATE/DELETE triggers."""
-    h1 = append_audit_log("RFP-2026-900-V1.0", "auditor@corp.local", "TEST_EVENT_1", 1, {"step": 1})
-    h2 = append_audit_log("RFP-2026-900-V1.0", "auditor@corp.local", "TEST_EVENT_2", 1, {"step": 2})
+    h1 = append_audit_log("RFP-2026-900-V1.0", "tester@example.test", "TEST_EVENT_1", 1, {"step": 1})
+    h2 = append_audit_log("RFP-2026-900-V1.0", "tester@example.test", "TEST_EVENT_2", 1, {"step": 2})
     assert len(h1) == 64
     assert h1 != h2
 
